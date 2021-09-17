@@ -61,6 +61,7 @@ namespace TP3
             } catch (Exception)
             {
                 MessageBox.Show("Los datos numericos DNI o Año de Inscripción son inválidos.");
+                txtDni.Focus();
                 return false;
             }
 
@@ -74,6 +75,7 @@ namespace TP3
                 alumnos.Add(new Alumno(txtNombre.Text, txtApellido.Text, Int32.Parse(txtDni.Text), txtLegajo.Text, txtCarrera.Text, Int32.Parse(txtAnio.Text)));
                 LimpiarCampos();
                 ActualizarContador();
+                txtNombre.Focus();
             }
         }
 

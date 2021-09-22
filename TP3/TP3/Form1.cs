@@ -38,6 +38,7 @@ namespace TP3
             {
                 MessageBox.Show("Debe ingresar un dato válido en el campo " + textBox.Name.Substring(3));
                 textBox.Focus();
+                textBox.SelectAll();
                 return false;
             }
 
@@ -58,6 +59,8 @@ namespace TP3
             {
                 var temp = Int32.Parse(txtDni.Text);
                 temp = Int32.Parse(txtAnio.Text);
+                if (temp > DateTime.Now.Year)
+                    throw new Exception();
             } catch (Exception)
             {
                 MessageBox.Show("Los datos numericos DNI o Año de Inscripción son inválidos.");
@@ -87,6 +90,7 @@ namespace TP3
             txtLegajo.Text = "";
             txtCarrera.Text = "";
             txtAnio.Text = "";
+            txtNombre.Focus();
         }
 
         private void ActualizarContador()

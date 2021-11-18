@@ -1,0 +1,36 @@
+﻿@model IEnumerable<TP6.Models.Libro>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(l => l.Titulo)</th>
+        <th>@Html.DisplayNameFor(l => l.Autor)</th>
+        <th>@Html.DisplayNameFor(l => l.Editorial)</th>
+        <th>@Html.DisplayNameFor(l => l.FechaEdicion)</th>
+        <th colspan="2"></th>
+    </tr>
+
+@foreach (var libro in Model) {
+    <tr>
+        <td>@libro.Titulo</td>
+        <td>@libro.Autor</td>
+        <td>@libro.Editorial</td>
+        <td>@libro.FechaEdicion.ToString("dd/MM/yyyy")</td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=libro.Id }) |
+            @Html.ActionLink("Detalles", "Details", new { id=libro.Id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=libro.Id })
+        </td>
+    </tr>
+}
+
+</table>

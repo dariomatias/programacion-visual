@@ -17,58 +17,48 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
-    <div>
-        @Html.LabelFor(model => model.Titulo)
-        @Html.TextBoxFor(model => model.Titulo)
-    </div>
-    <div>
-        @Html.LabelFor(model => model.Autor)
-        @Html.TextBoxFor(model => model.Autor)
-    </div>
+        <div>
+            @Html.LabelFor(model => model.Titulo)
+            @Html.TextBoxFor(model => model.Titulo, new { required = "required", type = "text" })
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Autor)
+            @Html.TextBoxFor(model => model.Autor, new { required = "required", type = "text" })
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
         
-    <div>
-        @Html.LabelFor(model => model.Paginas)
-        @Html.TextBoxFor(model => model.Paginas)
-
-    </div>
-    <div>
-        @Html.LabelFor(model => model.Paginas)
-        @Html.TextBoxFor(model => model.Paginas)
-
-    </div>
-    <div>
-        @Html.LabelFor(model => model.ISBN)
-        @Html.TextBoxFor(model => model.ISBN)
-
-    </div>
-    <div>
-        @Html.LabelFor(model => model.Edicion)
-        @Html.TextBoxFor(model => model.Edicion)
-
-    </div>
-    <div>
-        @Html.LabelFor(model => model.Editorial)
-        @Html.TextBoxFor(model => model.Editorial)
-
-    </div>
-    <div>
-        @Html.LabelFor(model => model.Lugar)
-        @Html.EditorFor(model => model.Lugar)
-
-    </div>
-    <div>
-        @Html.LabelFor(model => model.FechaEdicion)
-        @Html.TextBoxFor(model => model.FechaEdicion.ToString("yyyy-mm-dd"), new { type = "date" })
-
-    </div>
-    <div></div>
-
-
-
-
-
-
-
+        <div>
+            @Html.LabelFor(model => model.Paginas)
+            @Html.TextBoxFor(model => model.Paginas, new { required = "required", type = "number" })
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            @Html.LabelFor(model => model.ISBN)
+            @Html.TextBoxFor(model => model.ISBN, new { required = "required", type = "number" })
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Edicion)
+            @Html.TextBoxFor(model => model.Edicion, new { required = "required", type = "number" })
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Editorial)
+            @Html.TextBoxFor(model => model.Editorial, new { required = "required", type = "text" })
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Lugar)
+            @Html.EditorFor(model => model.Lugar, new { required = "required", type = "text" })
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            @Html.LabelFor(model => model.FechaEdicion)
+            @Html.TextBoxFor(model => model.FechaEdicion, new { required = "required", type = "date" })
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

@@ -66,3 +66,34 @@ footer {
     margin: 40px;
     box-shadow: #888888;
 }
+
+tr > td:last-of-type {
+    display: flex;
+}
+
+a {
+    display: inline-block;
+}
+
+.link-container {
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 3px;
+    margin: 3px;
+}
+
+.link-container.edit {
+    background: green;
+}
+
+.link-container.detail {
+    background: darkblue;
+}
+
+.link-container.delete {
+    background: red;
+}
+
+.link-container a {
+    color: white;
+}

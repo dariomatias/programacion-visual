@@ -16,7 +16,7 @@
         <th>@Html.DisplayNameFor(l => l.Autor)</th>
         <th>@Html.DisplayNameFor(l => l.Editorial)</th>
         <th>@Html.DisplayNameFor(l => l.FechaEdicion)</th>
-        <th colspan="2"></th>
+        <th></th>
     </tr>
 
 @foreach (var libro in Model) {
@@ -26,9 +26,15 @@
         <td>@libro.Editorial</td>
         <td>@libro.FechaEdicion.ToString("dd/MM/yyyy")</td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=libro.Id }) |
-            @Html.ActionLink("Detalles", "Details", new { id=libro.Id }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=libro.Id })
+            <div class="link-container button edit">
+                @Html.ActionLink("Editar", "Edit", new { id = libro.Id }, new { @class = "button edit"} )
+            </div>
+            <div class="link-container button detail">
+                @Html.ActionLink("Detalles", "Details", new { id = libro.Id }, new { @class = "button detail" })
+            </div>
+            <div class="link-container button delete">
+                @Html.ActionLink("Eliminar", "Delete", new { id = libro.Id }, new { @class = "button delete" })
+            </div>
         </td>
     </tr>
 }

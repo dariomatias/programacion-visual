@@ -25,7 +25,7 @@ namespace TP6.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Libro libro = db.Libros.FirstOrDefault(l => l.Id == id);
+            Libro libro = db.Libros.Find(id);
             if (libro == null)
             {
                 return HttpNotFound();

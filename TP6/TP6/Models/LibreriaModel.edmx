@@ -4,20 +4,10 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="LibreriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Libreria.dbo.Libros' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+      <Schema Namespace="LibreriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Libros">
           <Key>
             <PropertyRef Name="Id" />
-            <PropertyRef Name="Titulo" />
-            <PropertyRef Name="Autor" />
-            <PropertyRef Name="Paginas" />
-            <PropertyRef Name="ISBN" />
-            <PropertyRef Name="Edicion" />
-            <PropertyRef Name="Editorial" />
-            <PropertyRef Name="Lugar" />
-            <PropertyRef Name="FechaEdicion" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Titulo" Type="varchar(max)" Nullable="false" />
@@ -30,35 +20,16 @@ warning 6002: The table/view 'Libreria.dbo.Libros' does not have a primary key d
           <Property Name="FechaEdicion" Type="date" Nullable="false" />
         </EntityType>
         <EntityContainer Name="LibreriaModelStoreContainer">
-          <EntitySet Name="Libros" EntityType="Self.Libros" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Libros].[Id] AS [Id], 
-    [Libros].[Titulo] AS [Titulo], 
-    [Libros].[Autor] AS [Autor], 
-    [Libros].[Paginas] AS [Paginas], 
-    [Libros].[ISBN] AS [ISBN], 
-    [Libros].[Edicion] AS [Edicion], 
-    [Libros].[Editorial] AS [Editorial], 
-    [Libros].[Lugar] AS [Lugar], 
-    [Libros].[FechaEdicion] AS [FechaEdicion]
-    FROM [dbo].[Libros] AS [Libros]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Libros" EntityType="Self.Libros" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LibreriaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Libro">
           <Key>
             <PropertyRef Name="Id" />
-            <PropertyRef Name="Titulo" />
-            <PropertyRef Name="Autor" />
-            <PropertyRef Name="Paginas" />
-            <PropertyRef Name="ISBN" />
-            <PropertyRef Name="Edicion" />
-            <PropertyRef Name="Editorial" />
-            <PropertyRef Name="Lugar" />
-            <PropertyRef Name="FechaEdicion" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Titulo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />

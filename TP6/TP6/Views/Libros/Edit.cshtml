@@ -11,28 +11,64 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Libro</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
+    <div>
+        @Html.LabelFor(model => model.Titulo)
+        @Html.TextBoxFor(model => model.Titulo)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Autor)
+        @Html.TextBoxFor(model => model.Autor)
+    </div>
+        
+    <div>
+        @Html.LabelFor(model => model.Paginas)
+        @Html.TextBoxFor(model => model.Paginas)
 
-        @Html.HiddenFor(model => model.Titulo)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Paginas)
+        @Html.TextBoxFor(model => model.Paginas)
 
-        @Html.HiddenFor(model => model.Autor)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.ISBN)
+        @Html.TextBoxFor(model => model.ISBN)
 
-        @Html.HiddenFor(model => model.Paginas)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Edicion)
+        @Html.TextBoxFor(model => model.Edicion)
 
-        @Html.HiddenFor(model => model.ISBN)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Editorial)
+        @Html.TextBoxFor(model => model.Editorial)
 
-        @Html.HiddenFor(model => model.Edicion)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Lugar)
+        @Html.EditorFor(model => model.Lugar)
 
-        @Html.HiddenFor(model => model.Editorial)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.FechaEdicion)
+        @Html.TextBoxFor(model => model.FechaEdicion.ToString("yyyy-mm-dd"), new { type = "date" })
 
-        @Html.HiddenFor(model => model.Lugar)
+    </div>
+    <div></div>
 
-        @Html.HiddenFor(model => model.FechaEdicion)
+
+
+
+
+
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
